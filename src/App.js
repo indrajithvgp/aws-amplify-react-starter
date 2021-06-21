@@ -72,7 +72,7 @@ const App=()=> {
     return false
   }
 
-  const handleUpdateNote = async()=>{
+  const handleUpdatingNote = async()=>{
     const input ={
       id, note
     }
@@ -90,7 +90,7 @@ const App=()=> {
   const handleNote = async (e) => {
     e.preventDefault()
     if(hasExistingNote()){
-      return handleUpdateNote()
+      return handleUpdatingNote()
     }
     const input = {note}
     const res = await API.graphql(graphqlOperation(createNote, {input}))
